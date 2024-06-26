@@ -13,12 +13,12 @@ const { Option } = Select;
 
 
 const UploadFile: React.FC = () => {
-    const [formatFrom, setFormatFrom] = useState('jpeg');
+    // const [formatFrom, setFormatFrom] = useState('jpeg');
     const [formatTo, setFormatTo] = useState('webp');
     const [uploadedImages, setUploadedImages] = useState<any>([]);
-    const handleFormatFromChange = (value: any) => {
-        setFormatFrom(value);
-    };
+    // const handleFormatFromChange = (value: any) => {
+    //     setFormatFrom(value);
+    // };
 
     const handleFormatToChange = (value: any) => {
         setFormatTo(value);
@@ -67,7 +67,7 @@ const UploadFile: React.FC = () => {
 
                 setTimeout(() => {
                     window.location.reload();
-                }, 30 * 60 * 1000); // 30 minutes
+                }, 5 * 60 * 1000); // 5 minutes
 
             } catch (error: any) {
                 onError?.(error);
@@ -83,17 +83,17 @@ const UploadFile: React.FC = () => {
     return (
         <div>
             <div className="pb-[4rem]">
-                <h1 className="text-[2em]">Tool convert {formatFrom} to {formatTo}</h1>
-                <p>Convert file {formatFrom} to {formatTo} online and free</p>
+                <h1 className="text-[2em]">Tool convert file format to {formatTo}</h1>
+                <p>Convert file format to {formatTo} online and free</p>
             </div>
             <div className='flex flex-col justify-center gap-3'>
                 <div className='flex justify-end items-center gap-2'>
-                    <Select defaultValue="jpeg" style={{ width: 120 }} onChange={handleFormatFromChange}>
+                    {/* <Select defaultValue="jpeg" style={{ width: 120 }} onChange={handleFormatFromChange}>
                         <Option value="jpeg">JPEG</Option>
                         <Option value="png">PNG</Option>
                         <Option value="webp">WEBP</Option>
-                    </Select>
-                    <h3>To</h3>
+                    </Select> */}
+                    <h3 className='text-black dark:text-white'>To</h3>
                     <Select defaultValue="webp" style={{ width: 120 }} onChange={handleFormatToChange}>
                         <Option value="jpeg">JPEG</Option>
                         <Option value="png">PNG</Option>
