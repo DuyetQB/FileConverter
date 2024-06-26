@@ -51,7 +51,7 @@ const UploadFile: React.FC = () => {
             formData.append('images', file as RcFile);
             formData.append('format', formatTo);
             try {
-                const response = await axios.post('http://localhost:4000/upload', formData, {
+                const response = await axios.post('https://file-converter-api.onrender.com/upload', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     },
@@ -64,6 +64,11 @@ const UploadFile: React.FC = () => {
                 onSuccess?.(response.data);
                 setUploadedImages((prevImages: any) => [...prevImages, ...response.data.files]);
                 message.success(`${(file as RcFile).name} file uploaded successfully.`);
+
+                setTimeout(() => {
+                    window.location.reload();
+                }, 30 * 60 * 1000); // 30 minutes
+
             } catch (error: any) {
                 onError?.(error);
                 message.error(`${(file as RcFile).name} file upload failed.`);
@@ -122,7 +127,7 @@ const UploadFile: React.FC = () => {
                             return (
                                 <List.Item
                                     actions={[
-                                        <a href={`http://localhost:4000/download?name=${fileName}`} key="list-loadmore-download">
+                                        <a href={`https://file-converter-api.onrender.com/download?name=${fileName}`} key="list-loadmore-download">
                                             <Button icon={<DownloadOutlined />}>Download</Button>
                                         </a>
                                     ]}
