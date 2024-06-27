@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import type { UploadProps } from 'antd';
 import { Button, List, message, Select, Upload } from 'antd';
 import axios from 'axios';
-import type { RcFile, UploadRequestOption } from 'rc-upload/lib/interface';
+import type { RcFile } from 'rc-upload/lib/interface';
 import { DownloadOutlined } from '@ant-design/icons';
 import { IconImage, IconUpload } from '../icons/IconImage';
 
@@ -13,12 +13,12 @@ const { Option } = Select;
 
 
 const UploadFile: React.FC = () => {
-    // const [formatFrom, setFormatFrom] = useState('jpeg');
+    const [formatFrom, setFormatFrom] = useState('jpeg');
     const [formatTo, setFormatTo] = useState('webp');
     const [uploadedImages, setUploadedImages] = useState<any>([]);
-    // const handleFormatFromChange = (value: any) => {
-    //     setFormatFrom(value);
-    // };
+    const handleFormatFromChange = (value: any) => {
+        setFormatFrom(value);
+    };
 
     const handleFormatToChange = (value: any) => {
         setFormatTo(value);
@@ -27,11 +27,19 @@ const UploadFile: React.FC = () => {
     const props: UploadProps = {
         name: 'file',
         multiple: true,
+        beforeUpload: async (file, fileList) => {
+            console.log("beforeUpload", file);
+            if (file.type !== `image/${formatFrom}`) {
+                message.error(`${file.name} file upload is not ${formatFrom} file`);
+                return;
+            }
+        },
         onChange(info) {
             const { status } = info.file;
             if (status !== 'uploading') {
                 console.log(info.file, info.fileList);
             }
+
             if (status === 'done') {
                 message.success(`${info.file.name} file uploaded successfully.`);
             } else if (status === 'error') {
@@ -40,8 +48,11 @@ const UploadFile: React.FC = () => {
                 message.error(`${info.file.name} file upload failed.`);
             }
         },
-        customRequest: async (options: UploadRequestOption) => {
+        customRequest: async (options: any) => {
             const { file, onSuccess, onError, onProgress } = options;
+            if (file?.type !== `image/${formatFrom}`) {
+                return;
+            }
 
             if (!(file instanceof Blob) && onError) {
                 return onError(new Error('File is not a Blob'));
@@ -83,16 +94,16 @@ const UploadFile: React.FC = () => {
     return (
         <div>
             <div className="pb-[4rem]">
-                <h1 className="text-[2em]">Tool convert file format to {formatTo}</h1>
-                <p>Convert file format to {formatTo} online and free</p>
+                <h1 className="text-[2em]">Tool convert file {formatFrom} to {formatTo}</h1>
+                <p>Convert file {formatFrom} to {formatTo} online and free</p>
             </div>
             <div className='flex flex-col justify-center gap-3'>
                 <div className='flex justify-end items-center gap-2'>
-                    {/* <Select defaultValue="jpeg" style={{ width: 120 }} onChange={handleFormatFromChange}>
+                    <Select defaultValue="jpeg" style={{ width: 120 }} onChange={handleFormatFromChange}>
                         <Option value="jpeg">JPEG</Option>
                         <Option value="png">PNG</Option>
                         <Option value="webp">WEBP</Option>
-                    </Select> */}
+                    </Select>
                     <h3 className='text-black dark:text-white'>To</h3>
                     <Select defaultValue="webp" style={{ width: 120 }} onChange={handleFormatToChange}>
                         <Option value="jpeg">JPEG</Option>
