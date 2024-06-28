@@ -6,16 +6,18 @@ import axios from 'axios';
 import type { RcFile } from 'rc-upload/lib/interface';
 import { DownloadOutlined } from '@ant-design/icons';
 import { IconImage, IconUpload } from '../icons/IconImage';
+import { BaseSource } from '../common';
 
 const { Dragger } = Upload;
 const { Option } = Select;
 
 
 
-const UploadFile: React.FC = () => {
+const UploadFileImage: React.FC = () => {
     const [formatFrom, setFormatFrom] = useState('jpeg');
     const [formatTo, setFormatTo] = useState('webp');
     const [uploadedImages, setUploadedImages] = useState<any>([]);
+
     const handleFormatFromChange = (value: any) => {
         setFormatFrom(value);
     };
@@ -43,8 +45,6 @@ const UploadFile: React.FC = () => {
             if (status === 'done') {
                 message.success(`${info.file.name} file uploaded successfully.`);
             } else if (status === 'error') {
-                console.log("status", status);
-
                 message.error(`${info.file.name} file upload failed.`);
             }
         },
@@ -62,7 +62,7 @@ const UploadFile: React.FC = () => {
             formData.append('images', file as RcFile);
             formData.append('format', formatTo);
             try {
-                const response = await axios.post('https://file-converter-api.onrender.com/upload', formData, {
+                const response = await axios.post(`${BaseSource.baseUrl}/upload`, formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     },
@@ -103,12 +103,14 @@ const UploadFile: React.FC = () => {
                         <Option value="jpeg">JPEG</Option>
                         <Option value="png">PNG</Option>
                         <Option value="webp">WEBP</Option>
+                        <Option value="avif">AVIF</Option>
                     </Select>
                     <h3 className='text-black dark:text-white'>To</h3>
                     <Select defaultValue="webp" style={{ width: 120 }} onChange={handleFormatToChange}>
                         <Option value="jpeg">JPEG</Option>
                         <Option value="png">PNG</Option>
                         <Option value="webp">WEBP</Option>
+                        <Option value="avif">AVIF</Option>
                     </Select>
                 </div>
                 <div>
@@ -138,7 +140,7 @@ const UploadFile: React.FC = () => {
                             return (
                                 <List.Item
                                     actions={[
-                                        <a href={`https://file-converter-api.onrender.com/download?name=${fileName}`} key="list-loadmore-download">
+                                        <a href={`${BaseSource.baseUrl}/download?name=${fileName}`} key="list-loadmore-download">
                                             <Button icon={<DownloadOutlined />}>Download</Button>
                                         </a>
                                     ]}
@@ -161,4 +163,4 @@ const UploadFile: React.FC = () => {
 }
 
 
-export default UploadFile;
+export default UploadFileImage;
