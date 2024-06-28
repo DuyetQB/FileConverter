@@ -4,7 +4,7 @@ import { Button, List, message, Select, Upload } from 'antd';
 import axios from 'axios';
 import { RcFile, UploadProps } from 'antd/lib/upload/interface';
 import { DownloadOutlined } from '@ant-design/icons';
-import { IconImage, IconUpload } from '../icons/IconImage';
+import { IconAudio, IconUpload } from '../icons/IconImage';
 import { BaseSource } from "../common"
 
 const { Dragger } = Upload;
@@ -131,7 +131,7 @@ const UploadFileAudio: React.FC = () => {
                         dataSource={uploadedFiles}
                         renderItem={(item,index) => {
                             const fileName = item.fileName.replace(`.${formatFrom}`,`.${formatTo}`);
-                            
+
                             return (
                                 <List.Item
                                 key={index}
@@ -144,8 +144,8 @@ const UploadFileAudio: React.FC = () => {
                                     ]}
                                 >
                                     <div className="flex justify-center items-center gap-3">
-                                        <IconImage />
-                                        {fileName}
+                                       <IconAudio />
+                                        {item.file}
                                     </div>
                                 </List.Item>
                             );
