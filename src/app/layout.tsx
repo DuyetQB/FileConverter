@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     images: [{
       url: "./assets/main-thumbnail.png",
     }],
+    
   }
 };
 

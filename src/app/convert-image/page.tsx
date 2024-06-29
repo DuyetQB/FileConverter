@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     alternates:{
         canonical:"/convert-image"
     },
+    
     bookmarks:'/convert-image',
     category:"Convert image file",
     openGraph: {
