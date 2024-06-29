@@ -110,6 +110,7 @@ const UploadFileAudio: React.FC = () => {
                         <Option value="mp3">MP3</Option>
                         <Option value="wav">WAV</Option>
                         <Option value="ogg">OGG</Option>
+                        <Option value="m4a">M4A</Option>
                     </Select>
                 </div>
                 <div>
