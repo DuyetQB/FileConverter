@@ -104,13 +104,17 @@ const UploadFileImage: React.FC = () => {
                         <Option value="png">PNG</Option>
                         <Option value="webp">WEBP</Option>
                         <Option value="avif">AVIF</Option>
+                        <Option value="gif">GIF</Option>
+                        <Option value="bmp">BMP</Option>
                     </Select>
-                    <h3 className='text-black dark:text-white'>To</h3>
+                    <h3 className='text-black dark:text-white zIndex-2'>To</h3>
                     <Select defaultValue="webp" style={{ width: 120 }} onChange={handleFormatToChange}>
                         <Option value="jpeg">JPEG</Option>
                         <Option value="png">PNG</Option>
                         <Option value="webp">WEBP</Option>
                         <Option value="avif">AVIF</Option>
+                        <Option value="gif">GIF</Option>
+                        <Option value="bmp">BMP</Option>
                     </Select>
                 </div>
                 <div>
