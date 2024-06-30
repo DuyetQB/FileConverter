@@ -49,7 +49,7 @@ export default function Header() {
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <Link href="/" className="flex items-center">
                         <IconLogo />
-                        <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">FileConvert</span>
+                        <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">FilesConvert</span>
                     </Link>
                     <div className="flex items-center lg:order-2">
                         <button data-collapse-toggle="mobile-menu-2" type="button" 
@@ -75,7 +75,6 @@ export default function Header() {
                             ))}
 
                             <a href="#" className="text-white bg-primary dark:text-white focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-grey focus:outline-none dark:focus:ring-gray-800">Donate Author</a>
-
                         </ul>
                     </div>
                 </div>

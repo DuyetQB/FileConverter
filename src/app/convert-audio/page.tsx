@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     openGraph: {
       type: "website",
       url: "/convert-audio",
-      title: "FileConvert",
+      title: "Convert audio file",
       description: "FileConvert help you convert many files type. Supper fast and save your time",
       siteName: "Audio Convert",
       images: [{

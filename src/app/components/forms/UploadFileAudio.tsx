@@ -107,7 +107,7 @@ const UploadFileAudio: React.FC = () => {
                         <Option value="m4a">M4A</Option>
                         <Option value="aac">AAC</Option>
                     </Select>
-                    <h3 className="text-black dark:text-white zIndex-2">To</h3>
+                    <h3 className="text-black zIndex-2">To</h3>
                     <Select defaultValue="wav" style={{ width: 120  }} onChange={handleFormatToChange}>
                         <Option value="mp3">MP3</Option>
                         <Option value="wav">WAV</Option>

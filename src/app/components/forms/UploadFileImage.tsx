@@ -39,7 +39,7 @@ const UploadFileImage: React.FC = () => {
         onChange(info) {
             const { status } = info.file;
             if (status !== 'uploading') {
-                console.log(info.file, info.fileList);
+                message.info(`${info.file.name} file uploading...`);
             }
 
             if (status === 'done') {
@@ -108,7 +108,7 @@ const UploadFileImage: React.FC = () => {
                         <Option value="heic">HEIC</Option>
                         <Option value="tif">TIF</Option>
                     </Select>
-                    <h3 className='text-black dark:text-white zIndex-2'>To</h3>
+                    <h3 className='text-black zIndex-2'>To</h3>
                     <Select defaultValue="webp" style={{ width: 120 }} onChange={handleFormatToChange}>
                         <Option value="jpeg">JPEG</Option>
                         <Option value="png">PNG</Option>

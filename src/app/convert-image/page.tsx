@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     openGraph: {
       type: "website",
       url: "/convert-image",
-      title: "FileConvert",
+      title: "Convert image types",
       description: "Convert jpg to webp,convert jpg to avif,convert jpg to png. Supper fast and save your time",
       siteName: "Image Convert Type",
       images: [{

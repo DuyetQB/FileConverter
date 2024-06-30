@@ -15,11 +15,11 @@ export const metadata: Metadata = {
     },
     
     bookmarks:'/html-to-jsx',
-    category:"Convert image file",
+    category:"Convert html to jsx",
     openGraph: {
       type: "website",
       url: "/html-to-jsx",
-      title: "FileConvert",
+      title: "Convert html to jsx",
       description: "Convert html to jsx. Supper fast and save your time",
       siteName: "Html convert to jsx",
       images: [{
