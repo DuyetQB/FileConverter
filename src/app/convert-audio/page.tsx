@@ -6,7 +6,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: "Convert audio types",
-    description: "FileConvert help you convert many files type. Supper fast and save your time",
+    description: "Convert mp3 to waw, convert mp3 to m4a and other types. Supper fast and save your time",
     keywords: ['convert audio file', 'convert mp3 to waw','convert waw to mp3','convert mp3 to ogg'],
     referrer: 'origin',
     robots: 'index, follow',
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
     openGraph: {
       type: "website",
       url: "/convert-audio",
-      title: "Convert audio file",
-      description: "FileConvert help you convert many files type. Supper fast and save your time",
+      title: "Convert audio files",
+      description: "FilesConvert help you convert many files type. Supper fast and save your time",
       siteName: "Audio Convert",
       images: [{
         url: "./assets/main-thumbnail.png",

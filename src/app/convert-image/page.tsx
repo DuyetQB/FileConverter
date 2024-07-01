@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     },
     
     bookmarks:'/convert-image',
-    category:"Convert image file",
+    category:"Convert image files",
     openGraph: {
       type: "website",
       url: "/convert-image",

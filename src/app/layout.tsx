@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "FileConvert",
+  title: "FilesConvert",
   description: "FileConvert help you convert many files type. Supper fast and save your time",
   keywords: ['files convert', 'file'],
   referrer: 'origin',
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/",
-    title: "FileConvert",
-    description: "FileConvert help you convert many files type. Supper fast and save your time",
+    title: "FilesConvert",
+    description: "FilesConvert help you convert many files type. Supper fast and save your time",
     siteName: "FileConvert",
     images: [{
       url: "./assets/main-thumbnail.png",
