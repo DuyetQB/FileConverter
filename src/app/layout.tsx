@@ -19,7 +19,9 @@ export const metadata: Metadata = {
     images: [{
       url: "./assets/main-thumbnail.png",
     }],
-    
+  },
+  verification:{
+    google:'msYKoOpfNx-lGswS8LxexpukMTYEdDuvPIkGDKKAV-s'
   }
 };
 
