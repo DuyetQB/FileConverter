@@ -42,6 +42,7 @@ export default function ConvertHtmlToJsx() {
                             setInPutFrom(convertValue)
                         }
                         }
+                        autoFocus
                     />
                 </div >
                 <div className='flex-1 p-2 screen'>

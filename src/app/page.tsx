@@ -1,13 +1,9 @@
-import Header from "./components/Header";
-import UploadFile from "./components/forms/UploadFileImage";
+import HomePage from "./home/page"
 
-export default function Home() {
+export default function Page() {
   return (
-    <main className="lg:p-24 pt-24 px-2">
-      <section className="flex flex-col text-center gap-2">
-        <Header />
-        <UploadFile />
-      </section>
+    <main >
+      <HomePage />
     </main>
   );
 }
