@@ -15,7 +15,7 @@ export default function Payment() {
                 </div>
                 <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
                     {cardItem.map((rc: CardItemProps) => (
-                        <Card id={rc.id} name={rc.name} title={rc.title} price={rc.price} supported={rc.supported} credits={rc.credits}/>
+                        <Card id={rc.id} key={rc.id} name={rc.name} title={rc.title} price={rc.price} supported={rc.supported} credits={rc.credits}/>
                     ))}
                 </div>
             </div>
