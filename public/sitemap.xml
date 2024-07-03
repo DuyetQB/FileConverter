@@ -1,0 +1,15 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!-- We manually set the two URLs we know already -->
+<url>
+<loc>https://filesconvert.org</loc>
+</url>
+<url>
+<loc>https://filesconvert.org/convert-image</loc>
+</url>
+<url>
+<loc>https://filesconvert.org/convert-audio</loc>
+</url>
+<url>
+<loc>https://filesconvert.org/html-to-jsx</loc>
+</url>
+</urlset>
