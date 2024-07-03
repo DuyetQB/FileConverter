@@ -13,7 +13,7 @@ export const cardItem:CardItemProps[] = [
             },
             {
                 id:2,
-                name:'pload 50MB files in parallel'
+                name:'Upload 50MB files in parallel'
             },
             {
                 id:3,
@@ -38,7 +38,7 @@ export const cardItem:CardItemProps[] = [
             },
             {
                 id:3,
-                name:'Upload 2x faster'
+                name:'Upload 3x faster'
             },
         ]
     },
