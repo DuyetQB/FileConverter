@@ -2,13 +2,12 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from 'next/script'
 import "./globals.css";
-import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "FilesConvert",
-  description: "FileConvert help you convert many files type. Supper fast and save your time",
+  description: "FilesConvert help you convert many files type. Supper fast and save your time",
   keywords: ['files convert', 'file'],
   referrer: 'origin',
   robots: 'index, follow',
@@ -17,7 +16,7 @@ export const metadata: Metadata = {
     url: "/",
     title: "FilesConvert",
     description: "FilesConvert help you convert many files type. Supper fast and save your time",
-    siteName: "FileConvert",
+    siteName: "FilesConvert",
     images: [{
       url: "./assets/main-thumbnail.png",
     }],

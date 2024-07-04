@@ -28,7 +28,7 @@ export default function ConvertHtmlToJsx() {
 
                 <a onClick={
                     handleCopy
-                } className="flex items-center justify-center gap-2 cursor-pointer text-white bg-primary dark:text-white focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2 lg:px-4 py-2 lg:py-1.5 mr-2 dark:hover:bg-grey focus:outline-none dark:focus:ring-gray-800">
+                } className="flex items-center justify-center gap-2 cursor-pointer text-white bg-primary-500 dark:text-white focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2 lg:px-4 py-2 lg:py-1.5 mr-2 dark:hover:bg-grey focus:outline-none dark:focus:ring-gray-800">
                     <IconCopy />
                     {isCopySuccess ? 'Copied!' : 'Copy'}
                 </a>
