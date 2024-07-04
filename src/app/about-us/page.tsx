@@ -43,7 +43,7 @@ const page = () => {
 
                         <div className="lg:pr-24 flex items-center">
                             <div className="data w-full">
-                                <img src="/assets/avatar-first.png" alt="About Us page"
+                                <img src="/assets/content-about.png" alt="About Us page"
                                     className="block lg:hidden mb-9 mx-auto" />
                                 <h2 className="font-manrope font-bold text-4xl lg:text-5xl text-black mb-9 max-lg:text-center">We
                                     are Creative Since 2024</h2>
@@ -53,7 +53,7 @@ const page = () => {
                             </div>
                         </div>
                         <div className="img-box ">
-                            <img src="/assets/contant-about.png" alt="About Us page"
+                            <img src="/assets/content-about.png" alt="About Us page"
                                 className="hidden lg:block " />
                         </div>
                     </div>
