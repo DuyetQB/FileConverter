@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useEffect } from 'react'
 
 declare global {
     interface Window {
@@ -9,15 +9,17 @@ declare global {
   
 export default function BannerAds() {
 
-    // useEffect(() => {
-    //     if (typeof window !== 'undefined') {
-    //       try {
-    //         (window.adsbygoogle = window.adsbygoogle || []).push({});
-    //       } catch (e) {
-    //         console.error('Adsbygoogle error:', e);
-    //       }
-    //     }
-    //   }, []);
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+          try {
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+            console.error('push Adsbygoogle');
+          } catch (e) {
+            console.error('Adsbygoogle error:', e);
+          }
+        }
+      }, []);
+
   return (
         <ins
           className="adsbygoogle"
