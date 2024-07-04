@@ -47,7 +47,7 @@ export default function Header() {
         <header className='fixed top-0 left-0 right-0 z-20 bg-white'>
             <nav className={`bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 ${!isShowNav ? '' :'fixed left-0 right-0' }`}>
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-                    <Link href="/" className="flex items-center">
+                    <Link href="/" className="flex items-center gap-2">
                         <IconLogo />
                         <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">FilesConvert</span>
                     </Link>
