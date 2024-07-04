@@ -3,7 +3,6 @@ import Layout from '../components/layouts';
 import UploadFileImage from "@/app/components/forms/UploadFileImage"
 import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
-const BannerAds = dynamic(() => import('../components/BannerAds'), { ssr: false })
 
 
 export const metadata: Metadata = {
@@ -34,7 +33,6 @@ const Page: React.FC = () => {
 
     return (
         <Layout>
-            <BannerAds />
             <UploadFileImage />
         </Layout>
     );
