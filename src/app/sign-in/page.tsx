@@ -7,7 +7,7 @@ function page() {
         <div>
             <section className="bg-gray-50 dark:bg-gray-900">
                 <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-                    <Link href="/" className="flex items-center py-8">
+                    <Link href="/" className="flex items-center py-8 gap-2">
                         <IconLogo />
                         <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">FilesConvert</span>
                     </Link>
