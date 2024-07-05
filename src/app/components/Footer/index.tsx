@@ -4,8 +4,7 @@ import React from 'react'
 export default function Footer() {
     return (
         <div className='absolute bottom-0 left-0 right-0'>
-
-        <footer className="bg-white rounded-lg shadow m-4 dark:bg-gray-800">
+        <footer className="bg-white rounded-lg shadow m-2 dark:bg-gray-800">
             <div className="w-full mx-auto max-w-screen-xl p-4 lg:flex md:items-center lg:justify-between">
                 <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <a href="/" className="hover:underline">FilesConvert</a>. All Rights Reserved.
                 </span>

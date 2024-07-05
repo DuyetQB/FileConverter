@@ -3,30 +3,47 @@ import Layout from '../components/layouts';
 import { Metadata } from 'next';
 import ConvertHtmlToJsx from '../components/forms/ConvertHtmlToJsx';
 
-
-export const metadata: Metadata = {
-    title: "Convert html to jsx",
-    description: "Convert html to jsx. Supper fast and save your time",
-    keywords: ['convert html jsx', 'html to jsx','convert html to jsx'],
+  export const metadata:Metadata = {
+    title: "Html-to-jsx - Fast & Efficient File Conversion",
+    description: "FilesConvert helps you quickly convert multiple file types with ease. Super fast and saves your time. Convert documents, images, audio, video, and more.",
+    keywords: [
+      'file conversion', 
+      'convert files', 
+      'document conversion', 
+      'image conversion', 
+      'audio conversion', 
+      'video conversion', 
+      'file converter',
+      'html-to-jsx'
+    ],
     referrer: 'origin',
     robots: 'index, follow',
-    alternates:{
-        canonical:"/html-to-jsx"
-    },
-    
-    bookmarks:'/html-to-jsx',
-    category:"Convert html to jsx",
     openGraph: {
       type: "website",
-      url: "/html-to-jsx",
-      title: "Convert html to jsx",
-      description: "Convert html to jsx. Supper fast and save your time",
-      siteName: "Html convert to jsx",
+      url: "https://www.filesconvert.com/html-to-jsx",
+      title: "FilesConvert - Fast & Efficient File Conversion",
+      description: "FilesConvert helps you quickly convert multiple file types with ease. Super fast and saves your time. Convert documents, images, audio, video, and more.",
+      siteName: "Html-to-jsx",
       images: [{
-        url: "./assets/main-thumbnail.png",
+        url: "https://www.filesconvert.com/assets/main-thumbnail.png",
+        alt: "FilesConvert Logo"
       }],
     },
+    twitter: {
+      card: "summary_large_image",
+      site: "@FilesConvert",
+      title: "Html-to-jsx - Fast & Efficient File Conversion",
+      description: "FilesConvert helps you quickly convert multiple file types with ease. Super fast and saves your time. Convert documents, images, audio, video, and more.",
+      images: "https://www.filesconvert.com/assets/main-thumbnail.png",
+    },
+    verification: {
+      google: 'msYKoOpfNx-lGswS8LxexpukMTYEdDuvPIkGDKKAV-s'
+    },
+    alternates:{
+      canonical: 'https://www.filesconvert.com/html-to-jsx',
+    }
   };
+  
   
 const Page: React.FC = () => {
 

@@ -21,7 +21,7 @@ export default function ConvertHtmlToJsx() {
     return (
         <div>
             <div className="pb-[4rem]">
-                <h1 className="text-[2em]">Convert html to jsx</h1>
+                <h1 className="text-[2em] font-bold">Convert html to jsx</h1>
                 <p>Convert html to jsx online and free. Super fast</p>
             </div>
             <div className='flex justify-end'>

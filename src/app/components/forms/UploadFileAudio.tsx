@@ -95,7 +95,7 @@ const UploadFileAudio: React.FC = () => {
         <div>
             <div>
                <div className="pb-[4rem]">
-                <h1 className="text-[2em]">Audio File Converter</h1>
+                <h1 className="text-[2em] font-bold">Audio File Converter</h1>
                 <p>Convert audio files from {formatFrom} to {formatTo} online and free</p>
             </div>
             <div className="flex flex-col justify-center gap-3">

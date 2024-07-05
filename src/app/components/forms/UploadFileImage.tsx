@@ -94,7 +94,7 @@ const UploadFileImage: React.FC = () => {
     return (
         <div>
             <div className="pb-[4rem]">
-                <h1 className="text-[2em]">Tool convert file {formatFrom} to {formatTo}</h1>
+                <h1 className="text-[2em] font-bold">Tool convert file {formatFrom} to {formatTo}</h1>
                 <p>Convert file {formatFrom} to {formatTo} online and free</p>
             </div>
             <div className='flex flex-col justify-center gap-3'>
@@ -134,7 +134,7 @@ const UploadFileImage: React.FC = () => {
 
             </div>
             {uploadedImages.length > 0 && (
-                <div className='py-[5rem]'>
+                <div className='py-[5rem] pb-[8rem]'>
                     <h3 className='text-[2em]'>List files to download</h3>
                     <List
                         style={{ marginTop: 16 }}
@@ -151,10 +151,10 @@ const UploadFileImage: React.FC = () => {
                                         </a>
                                     ]}
                                 >
-                                    <div className='flex justify-center items-center gap-3'>
+                                    <div className='flex justify-center items-center gap-3 truncate'>
 
                                         <IconImage />
-                                        {fileName}
+                                      {fileName} 
                                     </div>
                                 </List.Item>
                             );

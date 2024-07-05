@@ -13,7 +13,7 @@ export default function Payment() {
                     <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Best convert files tool for you</h2>
                     <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">We focus on solutions that address the most basic needs. Can bring long-term value and promote economic growth.</p>
                 </div>
-                <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
+                <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0 pb-16">
                     {cardItem.map((rc: CardItemProps) => (
                         <Card id={rc.id} key={rc.id} name={rc.name} title={rc.title} price={rc.price} supported={rc.supported} credits={rc.credits}/>
                     ))}

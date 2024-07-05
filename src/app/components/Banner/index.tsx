@@ -5,7 +5,7 @@ export default function Banner() {
     return (
         <div className='background-caro relative'>
             <div className='pb-2'>
-                <h1 className="text-[2em]">A platform to convert many files type. Save your time</h1>
+                <h1 className="text-[2em] font-bold">A platform to convert many files type. Save your time</h1>
                 <p className='bg-primary-500 text-white inline'>Convert all files you need. It&rsquo;s online and free</p>
             </div>
             <div className='flex justify-center relative'>
