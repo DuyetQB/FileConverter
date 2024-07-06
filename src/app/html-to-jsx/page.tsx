@@ -4,8 +4,8 @@ import { Metadata } from 'next';
 import ConvertHtmlToJsx from '../components/forms/ConvertHtmlToJsx';
 
   export const metadata:Metadata = {
-    title: "Html-to-jsx - Fast & Efficient File Conversion",
-    description: "FilesConvert helps you quickly convert multiple file types with ease. Super fast and saves your time. Convert documents, images, audio, video, and more.",
+    title: "HTML to JSX Converter",
+    description: "Convert HTML to JSX online. An online playground for HTML to JSX conversion",
     keywords: [
       'file conversion', 
       'convert files', 
@@ -13,7 +13,8 @@ import ConvertHtmlToJsx from '../components/forms/ConvertHtmlToJsx';
       'image conversion', 
       'audio conversion', 
       'video conversion', 
-      'file converter',
+      'html to jsx',
+      'Convert Html to Jsx',
       'html-to-jsx'
     ],
     referrer: 'origin',
@@ -21,8 +22,8 @@ import ConvertHtmlToJsx from '../components/forms/ConvertHtmlToJsx';
     openGraph: {
       type: "website",
       url: "https://www.filesconvert.com/html-to-jsx",
-      title: "FilesConvert - Fast & Efficient File Conversion",
-      description: "FilesConvert helps you quickly convert multiple file types with ease. Super fast and saves your time. Convert documents, images, audio, video, and more.",
+      title: "HTML to JSX Converter",
+      description: "Convert HTML to JSX online. An online playground for HTML to JSX conversion",
       siteName: "Html-to-jsx",
       images: [{
         url: "https://www.filesconvert.com/assets/main-thumbnail.png",
@@ -32,8 +33,8 @@ import ConvertHtmlToJsx from '../components/forms/ConvertHtmlToJsx';
     twitter: {
       card: "summary_large_image",
       site: "@FilesConvert",
-      title: "Html-to-jsx - Fast & Efficient File Conversion",
-      description: "FilesConvert helps you quickly convert multiple file types with ease. Super fast and saves your time. Convert documents, images, audio, video, and more.",
+      title: "HTML to JSX Converter",
+      description: "Convert HTML to JSX online. An online playground for HTML to JSX conversion",
       images: "https://www.filesconvert.com/assets/main-thumbnail.png",
     },
     verification: {
