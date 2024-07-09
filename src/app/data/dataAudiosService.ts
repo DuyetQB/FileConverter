@@ -1,0 +1,27 @@
+export const optionAudio = [
+    {
+        id:1,
+        name:"MP3",
+        value:"mp3"
+    },
+    {
+        id:2,
+        name:"WAV",
+        value:"wav"
+    },
+    {
+        id:3,
+        name:"OGG",
+        value:"ogg"
+    },
+    {
+        id:4,
+        name:"M4A",
+        value:"m4a"
+    },
+    {
+        id:5,
+        name:"AAC",
+        value:"aac"
+    },
+]

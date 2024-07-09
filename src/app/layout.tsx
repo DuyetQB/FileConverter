@@ -42,6 +42,16 @@ export const metadata:Metadata = {
   },
   alternates:{
     canonical: 'https://www.filesconvert.com',
+  },
+  icons:{
+    // icon:"https://www.filesconvert.com/assets/icon-logo.svg"
+    icon: [
+      {
+        url: "/assets/icon-logo.svg", // /public path
+        href: "/assets/icon-logo.svg", // /public path
+      },
+    ],
+
   }
 };
 

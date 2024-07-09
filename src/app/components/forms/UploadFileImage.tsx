@@ -7,23 +7,28 @@ import type { RcFile } from 'rc-upload/lib/interface';
 import { DownloadOutlined } from '@ant-design/icons';
 import { IconImage, IconUpload } from '../icons/IconImage';
 import { BaseSource } from '../common';
+import { optionImage } from '@/app/data/dataImagesService';
+import { useRouter, useParams } from 'next/navigation'
+import { getStringSide } from '@/app/utils/string';
 
 const { Dragger } = Upload;
 const { Option } = Select;
 
-
+type Params = {
+    slug: string
+}
 
 const UploadFileImage: React.FC = () => {
-    const [formatFrom, setFormatFrom] = useState('jpeg');
-    const [formatTo, setFormatTo] = useState('webp');
     const [uploadedImages, setUploadedImages] = useState<any>([]);
+    const router = useRouter()
+    const params: Params = useParams();
 
     const handleFormatFromChange = (value: any) => {
-        setFormatFrom(value);
+        router.push(`/images/${value}-to-${getStringSide("right", params.slug)}`)
     };
 
     const handleFormatToChange = (value: any) => {
-        setFormatTo(value);
+        router.push(`/images/${getStringSide("left", params.slug)}-to-${value}`)
     };
 
     const props: UploadProps = {
@@ -31,8 +36,8 @@ const UploadFileImage: React.FC = () => {
         multiple: true,
         beforeUpload: async (file, fileList) => {
             console.log("beforeUpload", file);
-            if (file.type !== `image/${formatFrom}`) {
-                message.error(`${file.name} file upload is not ${formatFrom} file`);
+            if (file.type !== `image/${getStringSide("left", params.slug)}`) {
+                message.error(`${file.name} file upload is not ${getStringSide("left", params.slug)} file`);
                 return;
             }
         },
@@ -50,7 +55,8 @@ const UploadFileImage: React.FC = () => {
         },
         customRequest: async (options: any) => {
             const { file, onSuccess, onError, onProgress } = options;
-            if (file?.type !== `image/${formatFrom}`) {
+            // check format from type
+            if (file?.type !== `image/${getStringSide("left", params.slug)}`) {
                 return;
             }
 
@@ -60,7 +66,8 @@ const UploadFileImage: React.FC = () => {
 
             const formData = new FormData();
             formData.append('images', file as RcFile);
-            formData.append('format', formatTo);
+            //append formatTo type
+            formData.append('format', getStringSide("right", params.slug));
             try {
                 const response = await axios.post(`${BaseSource.baseUrl}/upload`, formData, {
                     headers: {
@@ -94,29 +101,21 @@ const UploadFileImage: React.FC = () => {
     return (
         <div>
             <div className="pb-[4rem]">
-                <h1 className="text-[2em] font-bold">Tool convert file {formatFrom} to {formatTo}</h1>
-                <p>Convert file {formatFrom} to {formatTo} online and free</p>
+                <h1 className="text-[2em] font-bold">Tool convert file {getStringSide("left", params.slug)} to {getStringSide("right", params.slug)}</h1>
+                <p>Convert file {getStringSide("left", params.slug)} to {getStringSide("right", params.slug)} online and free</p>
             </div>
             <div className='flex flex-col justify-center gap-3'>
                 <div className='flex justify-end items-center gap-2'>
-                    <Select defaultValue="jpeg" style={{ width: 120 }} onChange={handleFormatFromChange}>
-                        <Option value="jpeg">JPEG</Option>
-                        <Option value="png">PNG</Option>
-                        <Option value="webp">WEBP</Option>
-                        <Option value="avif">AVIF</Option>
-                        <Option value="gif">GIF</Option>
-                        <Option value="heic">HEIC</Option>
-                        <Option value="tif">TIF</Option>
+                    <Select defaultValue={getStringSide("left", params.slug)} style={{ width: 120 }} onChange={handleFormatFromChange}>
+                        {optionImage.map((record) => (
+                            <Option value={record.value} key={record.id}>{record.name}</Option>
+                        ))}
                     </Select>
                     <h3 className='text-black zIndex-2'>To</h3>
-                    <Select defaultValue="webp" style={{ width: 120 }} onChange={handleFormatToChange}>
-                        <Option value="jpeg">JPEG</Option>
-                        <Option value="png">PNG</Option>
-                        <Option value="webp">WEBP</Option>
-                        <Option value="avif">AVIF</Option>
-                        <Option value="gif">GIF</Option>
-                        <Option value="heic">HEIC</Option>
-                        <Option value="tif">TIF</Option>
+                    <Select defaultValue={getStringSide("right", params.slug)} style={{ width: 120 }} onChange={handleFormatToChange}>
+                        {optionImage.map((record) => (
+                            <Option value={record.value} key={record.id}>{record.name}</Option>
+                        ))}
                     </Select>
                 </div>
                 <div>
@@ -154,7 +153,7 @@ const UploadFileImage: React.FC = () => {
                                     <div className='flex justify-center items-center gap-3 truncate'>
 
                                         <IconImage />
-                                      {fileName} 
+                                        {fileName}
                                     </div>
                                 </List.Item>
                             );

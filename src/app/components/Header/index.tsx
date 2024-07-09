@@ -18,12 +18,12 @@ const listNavItem: listNavItemProps[] = [
     {
         id: 2,
         title: "Convert Audio",
-        link: "/convert-audio",
+        link: "/audios/mp3-to-wav",
     },
     {
         id: 3,
         title: "Convert Image",
-        link: "/convert-image",
+        link: "/images/jpeg-to-webp",
     },
     {
         id: 4,

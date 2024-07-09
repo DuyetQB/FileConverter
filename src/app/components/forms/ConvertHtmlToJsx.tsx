@@ -47,7 +47,7 @@ export default function ConvertHtmlToJsx() {
                 </div >
                 <div className='flex-1 p-2 screen'>
                     <textarea className='border-2 w-full min-h-[300px] p-2 resize-none' placeholder='Jsx code will generate here'
-
+                        defaultValue=''
                         value={inputFrom}
                     />
                 </div>
