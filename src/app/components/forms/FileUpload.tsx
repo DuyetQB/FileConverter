@@ -7,7 +7,7 @@ import { convertToFormat, formatFileSize } from '@/app/utils/function';
 import { IconImage, IconUpload } from '../icons/IconImage';
 import { ArrowRightOutlined, DeleteOutlined, PlusOutlined } from '@ant-design/icons';
 import { getStringSide, sliceStringLength } from '@/app/utils/string';
-import { message } from 'antd';
+import { Progress, message } from 'antd';
 
 let dbPromise: any;
 
@@ -36,6 +36,7 @@ const FileUpload = (props: FileUploadProps) => {
   const [selectedFiles, setSelectedFiles] = useState<any>([]);
   const [fileData, setFileData] = useState<FileData[]>([]);
   const [isConvert, setIsConvert] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   const handleFileChange = (event: any) => {
     const newDataFile = Array.from(event.target.files)
@@ -48,7 +49,7 @@ const FileUpload = (props: FileUploadProps) => {
         const options = {
           maxSizeMB: 1,
           useWebWorker: true,
-          // onProgress: (p: number) => setProgress((prevProgress) => Math.max(prevProgress, p)),
+          onProgress: (p: number) => setProgress((prevProgress) => Math.max(prevProgress, p)),
         };
 
         for (const file of selectedFiles) {
@@ -279,7 +280,7 @@ const FileUpload = (props: FileUploadProps) => {
             <div className='flex-1'>
               <div className='flex justify-between items-center '>
                 <span className='text-green text-[0.6em] border-[1px] px-[3px] rounded-[3px]'>READY</span>
-                <span className='text-grayDark text-[0.7em]'><strong className='uppercase'>{getStringSide("left", slug)}</strong>/{formatFileSize(rc.size, 2)}</span>
+                <span className='text-grayDark text-[0.7em]'><strong className='uppercase'>{rc.type.replace("image/","")}</strong>/{formatFileSize(rc.size, 2)}</span>
 
                 <button onClick={() => handleFileSelectedDelete(index)} className='text-red mx-3'
                   title="delete"
@@ -304,11 +305,14 @@ const FileUpload = (props: FileUploadProps) => {
             <span className='ml-3'>Add more files</span>
 
           </label>
-          <button className={`text-white ${isConvert ? 'bg-grayDark' : 'bg-primary-600 hover:bg-primary-700'} dark:text-white focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-6 py-4 lg:py-2.5 mr-2 dark:hover:bg-grey focus:outline-none dark:focus:ring-gray-800`}
+          <button className={`text-white ${isConvert ? 'bg-grayDark' : 'bg-primary-600 hover:bg-primary-700'} flex items-center dark:text-white focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-6 py-4 lg:py-2.5 mr-2 dark:hover:bg-grey focus:outline-none dark:focus:ring-gray-800`}
             onClick={handleFileUpload}
             disabled={isConvert}
           >
-            <span className="mr-3">Convert</span>
+            {progress > 0 && progress < 100 &&(
+               <Progress type="circle" percent={progress} size={20} />
+            )}
+            <span className="mx-3">Convert</span>
             <ArrowRightOutlined />
           </button>
 
