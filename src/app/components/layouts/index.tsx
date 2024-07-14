@@ -13,7 +13,7 @@ export default function Layout({children}:{children:React.ReactNode}) {
       <div className="flex flex-col text-center gap-2">
         <Header />
         {children}
-        <Footer/>
+        <Footer/> 
       </div>
     </div>
   )

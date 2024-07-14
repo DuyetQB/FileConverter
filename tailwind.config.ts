@@ -9,7 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors:{
-        grey:'F7F9FB',
+        grey:'#F7F9FB',
+        gray:'#d9d9d9',
+        grayDark:'#959595',
+        hint:'rgba(0, 0, 0, 0.45)',
+        green:'#32be5b',
+        blue:'#4096ff',
+        bgUpload:'rgba(0, 0, 0, 0.02)',
+        red:'red',
         primary: {"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a8a","950":"#172554"}
       },
       backgroundImage: {

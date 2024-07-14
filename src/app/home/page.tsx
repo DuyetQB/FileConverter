@@ -9,7 +9,7 @@ const Page: React.FC = () => {
 
     return (
         <Layout>
-           <Banner />
+            <Banner />
            <BannerAds/>
            <Gtag />
         </Layout>
