@@ -100,8 +100,6 @@ const FileUpload = (props: FileUploadProps) => {
 
       })
       setFileData(() => [...getAllFile]);
-
-      console.log('File retrieved from IndexedDB', allFiles);
     }
   };
 
@@ -208,6 +206,7 @@ const FileUpload = (props: FileUploadProps) => {
       message.error('Failed to download file.');
     }
   };
+
   return (
     <div>
       <label htmlFor='input' role="button"
