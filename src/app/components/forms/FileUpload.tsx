@@ -189,6 +189,16 @@ const FileUpload = (props: FileUploadProps) => {
 
   }
 
+  const handleDownload = (url:string, filename:string) => {
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+  
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div>
       <label htmlFor='input' role="button"
@@ -229,7 +239,10 @@ const FileUpload = (props: FileUploadProps) => {
                 </span>
                 <div className='flex flex-wrap gap-1'>
 
-                  <a href={rc.link} download={rc.fileName} className='text-white bg-primary-600 hover:bg-primary-700 dark:text-white focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2 lg:px-3  py-2 lg:py-2.5 mr-2 dark:hover:bg-grey focus:outline-none dark:focus:ring-gray-800'
+                  <a
+                  role='button'
+                  onClick={() => handleDownload(rc.link,rc.fileName)}
+                  className='text-white bg-primary-600 hover:bg-primary-700 dark:text-white focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2 lg:px-3  py-2 lg:py-2.5 mr-2 dark:hover:bg-grey focus:outline-none dark:focus:ring-gray-800'
                   >Download</a>
                   <button onClick={() => handleFileDelete(rc.id)} className='text-red mx-3'
                     title="delete"
