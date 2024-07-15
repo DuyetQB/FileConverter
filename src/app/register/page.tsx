@@ -1,10 +1,10 @@
 import React from 'react'
-import SignIn from '../components/auth/SignIn'
+import Register from '../components/auth/Register'
 
 function page() {
     return (
         <div>
-           <SignIn />
+           <Register />
         </div>
     )
 }

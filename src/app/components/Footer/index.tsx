@@ -16,6 +16,9 @@ export default function Footer() {
                     <Link href="/about-us" className="hover:underline me-4 md:me-6">About</Link>
                     </li>
                     <li>
+                    <Link href="/policy" className="hover:underline me-4 md:me-6">Policy</Link>
+                    </li>
+                    <li>
                         <a href="https://www.facebook.com/profile.php?id=100087750369196" target='_blank' className="hover:underline">Contact</a>
                     </li>
                 </ul>

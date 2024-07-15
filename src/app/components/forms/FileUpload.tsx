@@ -49,6 +49,7 @@ const FileUpload = (props: FileUploadProps) => {
         const options = {
           maxSizeMB: 1,
           useWebWorker: true,
+          fileType: `image/${getStringSide("right", slug)}`,
           onProgress: (p: number) => setProgress((prevProgress) => Math.max(prevProgress, p)),
         };
 
@@ -247,8 +248,7 @@ const FileUpload = (props: FileUploadProps) => {
                   <strong className='uppercase'>{getStringSide("right", slug)}</strong>/{formatFileSize(rc.size, 2)}
                 </span>
                 <div className='flex flex-wrap gap-1'>
-
-                  <a
+                   <a
                   role='button'
                   onClick={() => handleDownload(rc.file)}
                   className='text-white bg-primary-600 hover:bg-primary-700 dark:text-white focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2 lg:px-3  py-2 lg:py-2.5 mr-2 dark:hover:bg-grey focus:outline-none dark:focus:ring-gray-800'
