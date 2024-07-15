@@ -7,6 +7,7 @@ import { BaseSource } from '../../common'
 function SignIn() {
 
     const googleLogin = () => window.open(`${BaseSource.baseUrl}/auth/google`, "_self")
+    const gitHubLogin = () => window.open(`${BaseSource.baseUrl}/auth/github`, "_self")
 
     return (
         <section className="background-caro dark:bg-gray-900">
@@ -22,7 +23,9 @@ function SignIn() {
                             Sign in to your account
                         </h1>
                     <button
-                        className="inline-flex h-10 w-full items-center justify-center gap-2 rounded border border-slate-300 bg-white p-2 text-sm font-medium text-black outline-none focus:ring-2 focus:ring-[#333] focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60">
+                        className="inline-flex h-10 w-full items-center justify-center gap-2 rounded border border-slate-300 bg-white p-2 text-sm font-medium text-black outline-none focus:ring-2 focus:ring-[#333] focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-60"
+                        onClick={() => gitHubLogin()}
+                        >
                             <img
                             src="https://www.svgrepo.com/show/512317/github-142.svg" alt="GitHub"
                             className="h-[18px] w-[18px] " />
