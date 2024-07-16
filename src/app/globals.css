@@ -8,6 +8,11 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+@font-face {
+  font-family: 'Google Sans';
+  src: url("/fonts/ProductSans-Regular.ttf");
+}
+
 /* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -19,6 +24,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   position: relative;
+  font-family: 'Google Sans', Times, serif;
 }
 
 /* @layer utilities {

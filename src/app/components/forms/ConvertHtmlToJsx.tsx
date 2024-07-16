@@ -21,8 +21,8 @@ export default function ConvertHtmlToJsx() {
     return (
         <div>
             <div className="pb-[4rem]">
-                <h1 className="text-[2em] font-bold">Convert html to jsx</h1>
-                <p>Convert html to jsx online and free. Super fast</p>
+                <h1 className="text-[2em] font-bold">Convert HTML to JSX</h1>
+                <p>Easily convert HTML to JSX with our online converter. Try it now and streamline your React development</p>
             </div>
             <div className='flex justify-end'>
 
@@ -36,7 +36,7 @@ export default function ConvertHtmlToJsx() {
             <div className='flex justify-center'>
 
                 <div className='flex-1 p-2 h-screen'>
-                    <textarea className='border-2 w-full min-h-[300px] p-2 resize-none' placeholder='Place the html code here!'
+                    <textarea className='border-2 border-primary-500 focus:outline-none peer-focus-visible:border-primary-500 w-full min-h-[300px] p-2 resize-none' placeholder='Place the html code here!'
                         onChange={(e) => {
                             const convertValue = convert(e.target.value)
                             setInPutFrom(convertValue)
@@ -46,9 +46,9 @@ export default function ConvertHtmlToJsx() {
                     />
                 </div >
                 <div className='flex-1 p-2 screen'>
-                    <textarea className='border-2 w-full min-h-[300px] p-2 resize-none' placeholder='Jsx code will generate here'
-                        defaultValue=''
+                    <textarea className='border-2 border-primary-500 focus:outline-none peer-focus-visible:border-primary-500 w-full min-h-[300px] p-2 resize-none' placeholder='Jsx code will generate here'
                         value={inputFrom}
+                        onChange={()=>void(0)}
                     />
                 </div>
             </div>
