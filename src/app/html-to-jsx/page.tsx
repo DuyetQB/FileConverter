@@ -39,6 +39,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://www.filesconvert.com/html-to-jsx',
+  },
+  icons: {
+      icon: "/assets/icon.png"
   }
 };
 

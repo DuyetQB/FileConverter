@@ -32,6 +32,9 @@ export async function generateMetadata(
     },
     alternates: {
       canonical: `https://www.filesconvert.com/images/${slugParams}`,
+    },
+    icons: {
+      icon: "/assets/icon.png"
     }
   }
 }
