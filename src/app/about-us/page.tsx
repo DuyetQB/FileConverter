@@ -1,3 +1,4 @@
+import Image from "next/image"
 import React from 'react'
 import Layout from '../components/layouts'
 
@@ -18,9 +19,9 @@ const page = () => {
             <section className="py-14 lg:py-24 relative">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative ">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-9">
-                        <div className="img-box">
-                            <img src="./assets/avatar-first.jpg" alt="About page"
-                                className="max-lg:mx-auto" />
+                        <div className="img-box relative min-h-[35rem]">
+                            <Image src="/assets/avatar-first.avif" alt="About page"
+                                className="max-lg:mx-auto" fill={true} priority quality={100} />
                         </div>
                         <div className="lg:pl-[100px] flex items-center">
                             <div className="data w-full">
@@ -45,6 +46,7 @@ const page = () => {
                             <div className="data w-full">
                                 <img src="./assets/content-about.png" alt="About Us page"
                                     className="block lg:hidden mb-9 mx-auto" />
+
                                 <h2 className="font-manrope font-bold text-4xl lg:text-5xl text-black mb-9 max-lg:text-center">We
                                     are Creative Since 2024</h2>
                                 <p className="font-normal text-xl leading-8 text-gray-500 max-lg:text-center max-w-2xl mx-auto">
