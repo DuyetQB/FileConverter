@@ -97,7 +97,7 @@ const FileUpload = (props: FileUploadProps) => {
           link: url,
           size: record.file.size,
           status: record.status,
-          file:record.file
+          file: record.file
         }
 
       })
@@ -190,7 +190,7 @@ const FileUpload = (props: FileUploadProps) => {
 
   }
 
-  const handleDownload = (file:any) => {
+  const handleDownload = (file: any) => {
     try {
       const url = window.URL.createObjectURL(new Blob([file]));
 
@@ -248,10 +248,10 @@ const FileUpload = (props: FileUploadProps) => {
                   <strong className='uppercase'>{getStringSide("right", slug)}</strong>/{formatFileSize(rc.size, 2)}
                 </span>
                 <div className='flex flex-wrap gap-1'>
-                   <a
-                  role='button'
-                  onClick={() => handleDownload(rc.file)}
-                  className='text-white bg-primary-600 hover:bg-primary-700 dark:text-white focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2 lg:px-3  py-2 lg:py-2.5 mr-2 dark:hover:bg-grey focus:outline-none dark:focus:ring-gray-800'
+                  <a
+                    role='button'
+                    onClick={() => handleDownload(rc.file)}
+                    className='text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-2 lg:px-3  py-2 lg:py-2.5 mr-2 focus:outline-none'
                   >Download</a>
                   <button onClick={() => handleFileDelete(rc.id)} className='text-red mx-3'
                     title="delete"
@@ -280,7 +280,7 @@ const FileUpload = (props: FileUploadProps) => {
             <div className='flex-1'>
               <div className='flex justify-between items-center '>
                 <span className='text-green text-[0.6em] border-[1px] px-[3px] rounded-[3px]'>READY</span>
-                <span className='text-grayDark text-[0.7em]'><strong className='uppercase'>{rc.type.replace("image/","")}</strong>/{formatFileSize(rc.size, 2)}</span>
+                <span className='text-grayDark text-[0.7em]'><strong className='uppercase'>{rc.type.replace("image/", "")}</strong>/{formatFileSize(rc.size, 2)}</span>
 
                 <button onClick={() => handleFileSelectedDelete(index)} className='text-red mx-3'
                   title="delete"
@@ -309,8 +309,8 @@ const FileUpload = (props: FileUploadProps) => {
             onClick={handleFileUpload}
             disabled={isConvert}
           >
-            {progress > 0 && progress < 100 &&(
-               <Progress type="circle" percent={progress} size={20} />
+            {progress > 0 && progress < 100 && (
+              <Progress type="circle" percent={progress} size={20} />
             )}
             <span className="mx-3">Convert</span>
             <ArrowRightOutlined />
